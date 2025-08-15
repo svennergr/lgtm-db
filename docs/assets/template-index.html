@@ -15,14 +15,81 @@
       height: auto;
       margin: 10px 0px 30px;
     }
+    
+    /* Remove margin from img when inside gif-container */
+    .gif-container img {
+      margin: 0;
+    }
 
     .fail img {
       display: none;
+    }
+    
+    /* Container for GIF and button */
+    .gif-container {
+      position: relative;
+      display: inline-block;
+      margin: 10px 0px 30px;
+    }
+    
+    /* Copy button styling */
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 10;
+    }
+    
+    .gif-container:hover .copy-button {
+      opacity: 1;
+    }
+    
+    .copy-button:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    .copy-button.copied {
+      background-color: #4CAF50;
     }
     </style>
   </head>
 
   <body>
   </body>
+  
+  <script>
+    function copyMarkdown(button, name, url) {
+      // Create the markdown string
+      const markdown = `![${name}](${url})`;
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(markdown).then(() => {
+        // Show feedback
+        button.textContent = 'Copied!';
+        button.classList.add('copied');
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+          button.textContent = 'Copy MD';
+          button.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        button.textContent = 'Error!';
+        setTimeout(() => {
+          button.textContent = 'Copy MD';
+        }, 2000);
+      });
+    }
+  </script>
 
 </html>

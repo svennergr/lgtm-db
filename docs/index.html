@@ -15,9 +15,50 @@
       height: auto;
       margin: 10px 0px 30px;
     }
+    
+    /* Remove margin from img when inside gif-container */
+    .gif-container img {
+      margin: 0;
+    }
 
     .fail img {
       display: none;
+    }
+    
+    /* Container for GIF and button */
+    .gif-container {
+      position: relative;
+      display: inline-block;
+      margin: 10px 0px 30px;
+    }
+    
+    /* Copy button styling */
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 10;
+    }
+    
+    .gif-container:hover .copy-button {
+      opacity: 1;
+    }
+    
+    .copy-button:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    .copy-button.copied {
+      background-color: #4CAF50;
     }
     </style>
   </head>
@@ -30,327 +71,729 @@
     </b>
     : git-push-and-go-home
     <br>
-    <img loading="lazy" alt="git-push-and-go-home" src="https://i.imgur.com/PKiCvz2.png" width="420" height="420">
-    <b>
-      Name
-    </b>
-    : smiling-cat-face-lgtm
+    <div class="gif-container">
+      <img loading="lazy" alt="git-push-and-go-home" src="https://i.imgur.com/PKiCvz2.png" width="420" height="420">
+      <button class="copy-button" onclick="copyMarkdown(this, 'git-push-and-go-home', 'https://i.imgur.com/PKiCvz2.png')">
+        Copy MD
+      </button>
+    </div>
     <br>
-    <img loading="lazy" alt="smiling-cat-face-lgtm" src="https://i.imgur.com/DUiOvL7.png" width="420" height="384">
-    <h2>
-      Gifs
-    </h2>
-    <b>
-      Name
-    </b>
-    : seal-of-approval-seal
-    <br>
-    <img loading="lazy" alt="seal-of-approval-seal" src="https://media.giphy.com/media/13zeE9qQNC5IKk/giphy.gif" width="420" height="283">
-    <b>
-      Name
-    </b>
-    : spongebob-many-thumbsup
-    <br>
-    <img loading="lazy" alt="spongebob-many-thumbsup" src="https://media.giphy.com/media/3o7abGQa0aRJUurpII/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : squidward-lacklustre-hooray
-    <br>
-    <img loading="lazy" alt="squidward-lacklustre-hooray" src="https://media.giphy.com/media/l0HlTUsy3ZOuDSQtG/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : spongebob-patrick-hooray
-    <br>
-    <img loading="lazy" alt="spongebob-patrick-hooray" src="https://media.giphy.com/media/3ohzAu2U1tOafteBa0/giphy.gif" width="420" height="315">
-    <b>
-      Name
-    </b>
-    : simon-cowell-agt-thumbsup
-    <br>
-    <img loading="lazy" alt="simon-cowell-agt-thumbsup" src="https://media.giphy.com/media/gqao9nM8RcSnYMgHnp/giphy.gif" width="420" height="420">
-    <b>
-      Name
-    </b>
-    : terminator2-thumbsup
-    <br>
-    <img loading="lazy" alt="terminator2-thumbsup" src="https://media.giphy.com/media/gFwZfXIqD0eNW/giphy.gif" width="420" height="177">
-    <b>
-      Name
-    </b>
-    : baby-girl-thumbsup-thankyou
-    <br>
-    <img loading="lazy" alt="baby-girl-thumbsup-thankyou" src="https://media.giphy.com/media/BYoRqTmcgzHcL9TCy1/giphy.gif" width="420" height="422">
-    <b>
-      Name
-    </b>
-    : sand-dune-shipit
-    <br>
-    <img loading="lazy" alt="sand-dune-shipit" src="https://media.giphy.com/media/xjZtu4qi1biIo/giphy.gif" width="420" height="315">
-    <b>
-      Name
-    </b>
-    : asian-man-cubicle-thumbsup
-    <br>
-    <img loading="lazy" alt="asian-man-cubicle-thumbsup" src="https://media.giphy.com/media/GCvktC0KFy9l6/giphy.gif" width="420" height="448">
-    <b>
-      Name
-    </b>
-    : cat-wearing-shades-letsgo
-    <br>
-    <img loading="lazy" alt="cat-wearing-shades-letsgo" src="https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif" width="420" height="395">
-    <b>
-      Name
-    </b>
-    : nicholas-cage-letsgo
-    <br>
-    <img loading="lazy" alt="nicholas-cage-letsgo" src="https://media.giphy.com/media/RrVzUOXldFe8M/giphy.gif" width="420" height="315">
-    <b>
-      Name
-    </b>
-    : wwe-referee-thumbsup
-    <br>
-    <img loading="lazy" alt="wwe-referee-thumbsup" src="https://c.tenor.com/JS6Vtap-SYEAAAAC/wwe-wrestling.gif" width="420" height="328">
-    <b>
-      Name
-    </b>
-    : domino-effect-self-high-five
-    <br>
-    <img loading="lazy" alt="domino-effect-self-high-five" src="https://c.tenor.com/WBSIMZ5mHYAAAAAd/domino-effect-high-five.gif" width="420" height="410">
-    <b>
-      Name
-    </b>
-    : trump-showing-lgtm
-    <br>
-    <img loading="lazy" alt="trump-showing-lgtm" src="http://i.imgur.com/JebWqWC.gif" width="420" height="366">
-    <b>
-      Name
-    </b>
-    : borat-great-success
-    <br>
-    <img loading="lazy" alt="borat-great-success" src="https://media.giphy.com/media/a0h7sAqON67nO/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : walkby-cat-high-five-shipit
-    <br>
-    <img loading="lazy" alt="walkby-cat-high-five-shipit" src="https://i.fluffy.cc/MKjDMmwXxZlqRTwnn070gVqZ8Rwh6d3p.gif" width="420" height="235">
-    <b>
-      Name
-    </b>
-    : dog-in-front-of-laptop-lgtm
-    <br>
-    <img loading="lazy" alt="dog-in-front-of-laptop-lgtm" src="https://media.giphy.com/media/eM0U5NQtVHu30VM5sS/giphy.gif" width="420" height="425">
-    <b>
-      Name
-    </b>
-    : joey-friends-nice
-    <br>
-    <img loading="lazy" alt="joey-friends-nice" src="https://media.giphy.com/media/ftYpwfV6ZcerEa8poV/giphy.gif" width="420" height="343">
-    <b>
-      Name
-    </b>
-    : dog-dressed-as-human-lgtm
-    <br>
-    <img loading="lazy" alt="dog-dressed-as-human-lgtm" src="https://media.giphy.com/media/gLuP6eGC3yamBoGMJT/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : gordon-ramsey-brilliant
-    <br>
-    <img loading="lazy" alt="gordon-ramsey-brilliant" src="https://media.giphy.com/media/3oFzlX9khlRIev1E2Y/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : pedro-pascal-fist-salute
-    <br>
-    <img loading="lazy" alt="pedro-pascal-fist-salute" src="https://media.giphy.com/media/n58MqIchLqAalRQAQB/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : choi-aera-fightformyway-thumbsup
-    <br>
-    <img loading="lazy" alt="choi-aera-fightformyway-thumbsup" src="https://media.giphy.com/media/PL6d4VCbp1hhkF2wO9/giphy.gif" width="420" height="272">
-    <b>
-      Name
-    </b>
-    : this-is-a-high-five-moment
-    <br>
-    <img loading="lazy" alt="this-is-a-high-five-moment" src="https://media.giphy.com/media/w5S93jM3bA3rbPTOpO/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : unwilling-cat-low-five-shipit
-    <br>
-    <img loading="lazy" alt="unwilling-cat-low-five-shipit" src="https://media.giphy.com/media/TLKp7l4rdWFMVfN5hP/giphy.gif" width="420" height="253">
-    <b>
-      Name
-    </b>
-    : cat-standing-thankyou
-    <br>
-    <img loading="lazy" alt="cat-standing-thankyou" src="https://media.giphy.com/media/BPDa8OZh7gQPrhgDtd/giphy.gif" width="420" height="746">
-    <b>
-      Name
-    </b>
-    : multiple-pikachu-shipit
-    <br>
-    <img loading="lazy" alt="multiple-pikachu-shipit" src="https://i.fluffy.cc/BPgxZkmsrgmfcDFDCNWC3m4CW0gCJF7w.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : sitting-cat-high-five
-    <br>
-    <img loading="lazy" alt="sitting-cat-high-five" src="https://i.fluffy.cc/TNRR0PklwSCMZlZHQkvpQPNl8h50SpgP.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : husky-jumping-shipit
-    <br>
-    <img loading="lazy" alt="husky-jumping-shipit" src="https://i.fluffy.cc/b6wlBbdVkX83CHpLWxHZw74WJxHVQc9S.gif" width="420" height="445">
-    <b>
-      Name
-    </b>
-    : carrying-dog-shipit-plz
-    <br>
-    <img loading="lazy" alt="carrying-dog-shipit-plz" src="https://i.fluffy.cc/7WXqprWzDtCpbfprBZG1Hngnp7H7pfQm.gif" width="420" height="232">
-    <b>
-      Name
-    </b>
-    : kitten-low-five-shipit
-    <br>
-    <img loading="lazy" alt="kitten-low-five-shipit" src="https://i.fluffy.cc/3X84Bq2RR182XcPr0NTKKCp7wvNT8MhD.gif" width="420" height="226">
-    <b>
-      Name
-    </b>
-    : believe-flying-puppy-shipit
-    <br>
-    <img loading="lazy" alt="believe-flying-puppy-shipit" src="https://media.giphy.com/media/37YkA62o0EacPqD0xm/giphy.gif" width="420" height="396">
-    <b>
-      Name
-    </b>
-    : clockwork-thumbsup
-    <br>
-    <img loading="lazy" alt="clockwork-thumbsup" src="https://media.giphy.com/media/8xSnw21AM7OQo/giphy-downsized.gif" width="420" height="362">
-    <b>
-      Name
-    </b>
-    : fake-paws-dog-clapping
-    <br>
-    <img loading="lazy" alt="fake-paws-dog-clapping" src="https://media.giphy.com/media/cnEXsCkEEhPWKoIgEL/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : tom-hanks-laptop-lgtm
-    <br>
-    <img loading="lazy" alt="tom-hanks-laptop-lgtm" src="https://media.giphy.com/media/W7K4C2BnqqafLhHwpX/giphy.gif" width="420" height="239">
-    <b>
-      Name
-    </b>
-    : fluffy-dog-air-swimming
-    <br>
-    <img loading="lazy" alt="fluffy-dog-air-swimming" src="https://media.giphy.com/media/g8IptQ1lfPL2GN0G8G/giphy.gif" width="420" height="430">
-    <b>
-      Name
-    </b>
-    : dog-teaches-baby-crawling
-    <br>
-    <img loading="lazy" alt="dog-teaches-baby-crawling" src="https://media.giphy.com/media/pf09ZGSaOF7j7HsuSR/giphy.gif" width="420" height="224">
-    <b>
-      Name
-    </b>
-    : trump-debate-self-high-five
-    <br>
-    <img loading="lazy" alt="trump-debate-self-high-five" src="https://media.giphy.com/media/r60QQE4Y4RvwXqUjpC/giphy.gif" width="420" height="235">
-    <b>
-      Name
-    </b>
-    : recursive-thumbsup-in-video-recording
-    <br>
-    <img loading="lazy" alt="recursive-thumbsup-in-video-recording" src="https://media.giphy.com/media/kuDlY5VOWVTBkEpWoC/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : husky-head-through-door-flap-thankyou
-    <br>
-    <img loading="lazy" alt="husky-head-through-door-flap-thankyou" src="https://c.tenor.com/FK16Bus5_S0AAAAd/husky-huskies.gif" width="420" height="420">
-    <b>
-      Name
-    </b>
-    : singapore-nsp-thumbsup-man
-    <br>
-    <img loading="lazy" alt="singapore-nsp-thumbsup-man" src="https://media.giphy.com/media/e5z13ZQwKmj9X6ILcQ/giphy.gif" width="420" height="299">
-    <b>
-      Name
-    </b>
-    : sled-dog-puppy-air-swimming
-    <br>
-    <img loading="lazy" alt="sled-dog-puppy-air-swimming" src="https://media.giphy.com/media/pve4hvIwhDyYp9f8XU/giphy.gif" width="420" height="235">
-    <b>
-      Name
-    </b>
-    : baby-biscuit-expression-change
-    <br>
-    <img loading="lazy" alt="baby-biscuit-expression-change" src="https://media.giphy.com/media/Acx1QcsVJ7XrgD99JR/giphy.gif" width="420" height="315">
-    <b>
-      Name
-    </b>
-    : law-and-order-mirror-thumbsup
-    <br>
-    <img loading="lazy" alt="law-and-order-mirror-thumbsup" src="https://media.giphy.com/media/ugJjRLAQlHi09KZ6tu/giphy.gif" width="420" height="236">
-    <b>
-      Name
-    </b>
-    : head-swing-iloveit-thumbsup
-    <br>
-    <img loading="lazy" alt="head-swing-iloveit-thumbsup" src="https://media.giphy.com/media/2GaZZLgA9lxra/giphy.gif" width="420" height="196">
-    <b>
-      Name
-    </b>
-    : dog-hopping-low-five
-    <br>
-    <img loading="lazy" alt="dog-hopping-low-five" src="https://media.giphy.com/media/u8tbFJtOE7eQlq1Eii/giphy.gif" width="420" height="365">
-    <b>
-      Name
-    </b>
-    : otter-slamdunk-shipit
-    <br>
-    <img loading="lazy" alt="otter-slamdunk-shipit" src="https://media.giphy.com/media/hyKSrbOAMDtX1YeBxn/giphy.gif" width="420" height="411">
-    <b>
-      Name
-    </b>
-    : parrot-heart-thankyou
-    <br>
-    <img loading="lazy" alt="parrot-heart-thankyou" src="https://media.giphy.com/media/xPZw7k1pII527I4atR/giphy.gif" width="420" height="402">
-    <b>
-      Name
-    </b>
-    : corgi-excited-tippytaps
-    <br>
-    <img loading="lazy" alt="corgi-excited-tippytaps" src="https://media.giphy.com/media/9af1hFJUjIXqnG0QzN/giphy.gif" width="420" height="420">
-    <b>
-      Name
-    </b>
-    : zuckerberg-nice-job-team
-    <br>
-    <img loading="lazy" alt="zuckerberg-nice-job-team" src="https://media.giphy.com/media/JO7BToe2BmwVgWZ8gs/giphy.gif" width="420" height="746">
-    <b>
-      Name
-    </b>
-    : toddler-skiing-high-five
-    <br>
-    <img loading="lazy" alt="toddler-skiing-high-five" src="https://media.giphy.com/media/XA6AE9aVLfHS7lhGTM/giphy.gif" width="420" height="280">
-    <b>
-      Name
-    </b>
-    : twin-peaks-thumbs-up-duo
-    <br>
-    <img loading="lazy" alt="twin-peaks-thumbs-up-duo" src="https://media.giphy.com/media/An95xQZRS1B1S/giphy.gif" width="420" height="294">
-    <b>
-      Name
-    </b>
-    : cat-high-five-fall
-    <br>
-    <img loading="lazy" alt="cat-high-five-fall" src="https://media.giphy.com/media/wXF43QagSNJ6rw9WvC/giphy.gif" width="420" height="484">
+      <b>
+        Name
+      </b>
+      : smiling-cat-face-lgtm
+      <br>
+      <div class="gif-container">
+        <img loading="lazy" alt="smiling-cat-face-lgtm" src="https://i.imgur.com/DUiOvL7.png" width="420" height="384">
+        <button class="copy-button" onclick="copyMarkdown(this, 'smiling-cat-face-lgtm', 'https://i.imgur.com/DUiOvL7.png')">
+          Copy MD
+        </button>
+      </div>
+      <br>
+        <h2>
+          Gifs
+        </h2>
+        <b>
+          Name
+        </b>
+        : seal-of-approval-seal
+        <br>
+        <div class="gif-container">
+          <img loading="lazy" alt="seal-of-approval-seal" src="https://media.giphy.com/media/13zeE9qQNC5IKk/giphy.gif" width="420" height="283">
+          <button class="copy-button" onclick="copyMarkdown(this, 'seal-of-approval-seal', 'https://media.giphy.com/media/13zeE9qQNC5IKk/giphy.gif')">
+            Copy MD
+          </button>
+        </div>
+        <br>
+          <b>
+            Name
+          </b>
+          : spongebob-many-thumbsup
+          <br>
+          <div class="gif-container">
+            <img loading="lazy" alt="spongebob-many-thumbsup" src="https://media.giphy.com/media/3o7abGQa0aRJUurpII/giphy.gif" width="420" height="236">
+            <button class="copy-button" onclick="copyMarkdown(this, 'spongebob-many-thumbsup', 'https://media.giphy.com/media/3o7abGQa0aRJUurpII/giphy.gif')">
+              Copy MD
+            </button>
+          </div>
+          <br>
+            <b>
+              Name
+            </b>
+            : squidward-lacklustre-hooray
+            <br>
+            <div class="gif-container">
+              <img loading="lazy" alt="squidward-lacklustre-hooray" src="https://media.giphy.com/media/l0HlTUsy3ZOuDSQtG/giphy.gif" width="420" height="236">
+              <button class="copy-button" onclick="copyMarkdown(this, 'squidward-lacklustre-hooray', 'https://media.giphy.com/media/l0HlTUsy3ZOuDSQtG/giphy.gif')">
+                Copy MD
+              </button>
+            </div>
+            <br>
+              <b>
+                Name
+              </b>
+              : spongebob-patrick-hooray
+              <br>
+              <div class="gif-container">
+                <img loading="lazy" alt="spongebob-patrick-hooray" src="https://media.giphy.com/media/3ohzAu2U1tOafteBa0/giphy.gif" width="420" height="315">
+                <button class="copy-button" onclick="copyMarkdown(this, 'spongebob-patrick-hooray', 'https://media.giphy.com/media/3ohzAu2U1tOafteBa0/giphy.gif')">
+                  Copy MD
+                </button>
+              </div>
+              <br>
+                <b>
+                  Name
+                </b>
+                : simon-cowell-agt-thumbsup
+                <br>
+                <div class="gif-container">
+                  <img loading="lazy" alt="simon-cowell-agt-thumbsup" src="https://media.giphy.com/media/gqao9nM8RcSnYMgHnp/giphy.gif" width="420" height="420">
+                  <button class="copy-button" onclick="copyMarkdown(this, 'simon-cowell-agt-thumbsup', 'https://media.giphy.com/media/gqao9nM8RcSnYMgHnp/giphy.gif')">
+                    Copy MD
+                  </button>
+                </div>
+                <br>
+                  <b>
+                    Name
+                  </b>
+                  : terminator2-thumbsup
+                  <br>
+                  <div class="gif-container">
+                    <img loading="lazy" alt="terminator2-thumbsup" src="https://media.giphy.com/media/gFwZfXIqD0eNW/giphy.gif" width="420" height="177">
+                    <button class="copy-button" onclick="copyMarkdown(this, 'terminator2-thumbsup', 'https://media.giphy.com/media/gFwZfXIqD0eNW/giphy.gif')">
+                      Copy MD
+                    </button>
+                  </div>
+                  <br>
+                    <b>
+                      Name
+                    </b>
+                    : baby-girl-thumbsup-thankyou
+                    <br>
+                    <div class="gif-container">
+                      <img loading="lazy" alt="baby-girl-thumbsup-thankyou" src="https://media.giphy.com/media/BYoRqTmcgzHcL9TCy1/giphy.gif" width="420" height="422">
+                      <button class="copy-button" onclick="copyMarkdown(this, 'baby-girl-thumbsup-thankyou', 'https://media.giphy.com/media/BYoRqTmcgzHcL9TCy1/giphy.gif')">
+                        Copy MD
+                      </button>
+                    </div>
+                    <br>
+                      <b>
+                        Name
+                      </b>
+                      : sand-dune-shipit
+                      <br>
+                      <div class="gif-container">
+                        <img loading="lazy" alt="sand-dune-shipit" src="https://media.giphy.com/media/xjZtu4qi1biIo/giphy.gif" width="420" height="315">
+                        <button class="copy-button" onclick="copyMarkdown(this, 'sand-dune-shipit', 'https://media.giphy.com/media/xjZtu4qi1biIo/giphy.gif')">
+                          Copy MD
+                        </button>
+                      </div>
+                      <br>
+                        <b>
+                          Name
+                        </b>
+                        : asian-man-cubicle-thumbsup
+                        <br>
+                        <div class="gif-container">
+                          <img loading="lazy" alt="asian-man-cubicle-thumbsup" src="https://media.giphy.com/media/GCvktC0KFy9l6/giphy.gif" width="420" height="448">
+                          <button class="copy-button" onclick="copyMarkdown(this, 'asian-man-cubicle-thumbsup', 'https://media.giphy.com/media/GCvktC0KFy9l6/giphy.gif')">
+                            Copy MD
+                          </button>
+                        </div>
+                        <br>
+                          <b>
+                            Name
+                          </b>
+                          : cat-wearing-shades-letsgo
+                          <br>
+                          <div class="gif-container">
+                            <img loading="lazy" alt="cat-wearing-shades-letsgo" src="https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif" width="420" height="395">
+                            <button class="copy-button" onclick="copyMarkdown(this, 'cat-wearing-shades-letsgo', 'https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif')">
+                              Copy MD
+                            </button>
+                          </div>
+                          <br>
+                            <b>
+                              Name
+                            </b>
+                            : nicholas-cage-letsgo
+                            <br>
+                            <div class="gif-container">
+                              <img loading="lazy" alt="nicholas-cage-letsgo" src="https://media.giphy.com/media/RrVzUOXldFe8M/giphy.gif" width="420" height="315">
+                              <button class="copy-button" onclick="copyMarkdown(this, 'nicholas-cage-letsgo', 'https://media.giphy.com/media/RrVzUOXldFe8M/giphy.gif')">
+                                Copy MD
+                              </button>
+                            </div>
+                            <br>
+                              <b>
+                                Name
+                              </b>
+                              : wwe-referee-thumbsup
+                              <br>
+                              <div class="gif-container">
+                                <img loading="lazy" alt="wwe-referee-thumbsup" src="https://c.tenor.com/JS6Vtap-SYEAAAAC/wwe-wrestling.gif" width="420" height="328">
+                                <button class="copy-button" onclick="copyMarkdown(this, 'wwe-referee-thumbsup', 'https://c.tenor.com/JS6Vtap-SYEAAAAC/wwe-wrestling.gif')">
+                                  Copy MD
+                                </button>
+                              </div>
+                              <br>
+                                <b>
+                                  Name
+                                </b>
+                                : domino-effect-self-high-five
+                                <br>
+                                <div class="gif-container">
+                                  <img loading="lazy" alt="domino-effect-self-high-five" src="https://c.tenor.com/WBSIMZ5mHYAAAAAd/domino-effect-high-five.gif" width="420" height="410">
+                                  <button class="copy-button" onclick="copyMarkdown(this, 'domino-effect-self-high-five', 'https://c.tenor.com/WBSIMZ5mHYAAAAAd/domino-effect-high-five.gif')">
+                                    Copy MD
+                                  </button>
+                                </div>
+                                <br>
+                                  <b>
+                                    Name
+                                  </b>
+                                  : trump-showing-lgtm
+                                  <br>
+                                  <div class="gif-container">
+                                    <img loading="lazy" alt="trump-showing-lgtm" src="http://i.imgur.com/JebWqWC.gif" width="420" height="366">
+                                    <button class="copy-button" onclick="copyMarkdown(this, 'trump-showing-lgtm', 'http://i.imgur.com/JebWqWC.gif')">
+                                      Copy MD
+                                    </button>
+                                  </div>
+                                  <br>
+                                    <b>
+                                      Name
+                                    </b>
+                                    : borat-great-success
+                                    <br>
+                                    <div class="gif-container">
+                                      <img loading="lazy" alt="borat-great-success" src="https://media.giphy.com/media/a0h7sAqON67nO/giphy.gif" width="420" height="236">
+                                      <button class="copy-button" onclick="copyMarkdown(this, 'borat-great-success', 'https://media.giphy.com/media/a0h7sAqON67nO/giphy.gif')">
+                                        Copy MD
+                                      </button>
+                                    </div>
+                                    <br>
+                                      <b>
+                                        Name
+                                      </b>
+                                      : walkby-cat-high-five-shipit
+                                      <br>
+                                      <div class="gif-container">
+                                        <img loading="lazy" alt="walkby-cat-high-five-shipit" src="https://i.fluffy.cc/MKjDMmwXxZlqRTwnn070gVqZ8Rwh6d3p.gif" width="420" height="235">
+                                        <button class="copy-button" onclick="copyMarkdown(this, 'walkby-cat-high-five-shipit', 'https://i.fluffy.cc/MKjDMmwXxZlqRTwnn070gVqZ8Rwh6d3p.gif')">
+                                          Copy MD
+                                        </button>
+                                      </div>
+                                      <br>
+                                        <b>
+                                          Name
+                                        </b>
+                                        : dog-in-front-of-laptop-lgtm
+                                        <br>
+                                        <div class="gif-container">
+                                          <img loading="lazy" alt="dog-in-front-of-laptop-lgtm" src="https://media.giphy.com/media/eM0U5NQtVHu30VM5sS/giphy.gif" width="420" height="425">
+                                          <button class="copy-button" onclick="copyMarkdown(this, 'dog-in-front-of-laptop-lgtm', 'https://media.giphy.com/media/eM0U5NQtVHu30VM5sS/giphy.gif')">
+                                            Copy MD
+                                          </button>
+                                        </div>
+                                        <br>
+                                          <b>
+                                            Name
+                                          </b>
+                                          : joey-friends-nice
+                                          <br>
+                                          <div class="gif-container">
+                                            <img loading="lazy" alt="joey-friends-nice" src="https://media.giphy.com/media/ftYpwfV6ZcerEa8poV/giphy.gif" width="420" height="343">
+                                            <button class="copy-button" onclick="copyMarkdown(this, 'joey-friends-nice', 'https://media.giphy.com/media/ftYpwfV6ZcerEa8poV/giphy.gif')">
+                                              Copy MD
+                                            </button>
+                                          </div>
+                                          <br>
+                                            <b>
+                                              Name
+                                            </b>
+                                            : dog-dressed-as-human-lgtm
+                                            <br>
+                                            <div class="gif-container">
+                                              <img loading="lazy" alt="dog-dressed-as-human-lgtm" src="https://media.giphy.com/media/gLuP6eGC3yamBoGMJT/giphy.gif" width="420" height="236">
+                                              <button class="copy-button" onclick="copyMarkdown(this, 'dog-dressed-as-human-lgtm', 'https://media.giphy.com/media/gLuP6eGC3yamBoGMJT/giphy.gif')">
+                                                Copy MD
+                                              </button>
+                                            </div>
+                                            <br>
+                                              <b>
+                                                Name
+                                              </b>
+                                              : gordon-ramsey-brilliant
+                                              <br>
+                                              <div class="gif-container">
+                                                <img loading="lazy" alt="gordon-ramsey-brilliant" src="https://media.giphy.com/media/3oFzlX9khlRIev1E2Y/giphy.gif" width="420" height="236">
+                                                <button class="copy-button" onclick="copyMarkdown(this, 'gordon-ramsey-brilliant', 'https://media.giphy.com/media/3oFzlX9khlRIev1E2Y/giphy.gif')">
+                                                  Copy MD
+                                                </button>
+                                              </div>
+                                              <br>
+                                                <b>
+                                                  Name
+                                                </b>
+                                                : pedro-pascal-fist-salute
+                                                <br>
+                                                <div class="gif-container">
+                                                  <img loading="lazy" alt="pedro-pascal-fist-salute" src="https://media.giphy.com/media/n58MqIchLqAalRQAQB/giphy.gif" width="420" height="236">
+                                                  <button class="copy-button" onclick="copyMarkdown(this, 'pedro-pascal-fist-salute', 'https://media.giphy.com/media/n58MqIchLqAalRQAQB/giphy.gif')">
+                                                    Copy MD
+                                                  </button>
+                                                </div>
+                                                <br>
+                                                  <b>
+                                                    Name
+                                                  </b>
+                                                  : choi-aera-fightformyway-thumbsup
+                                                  <br>
+                                                  <div class="gif-container">
+                                                    <img loading="lazy" alt="choi-aera-fightformyway-thumbsup" src="https://media.giphy.com/media/PL6d4VCbp1hhkF2wO9/giphy.gif" width="420" height="272">
+                                                    <button class="copy-button" onclick="copyMarkdown(this, 'choi-aera-fightformyway-thumbsup', 'https://media.giphy.com/media/PL6d4VCbp1hhkF2wO9/giphy.gif')">
+                                                      Copy MD
+                                                    </button>
+                                                  </div>
+                                                  <br>
+                                                    <b>
+                                                      Name
+                                                    </b>
+                                                    : this-is-a-high-five-moment
+                                                    <br>
+                                                    <div class="gif-container">
+                                                      <img loading="lazy" alt="this-is-a-high-five-moment" src="https://media.giphy.com/media/w5S93jM3bA3rbPTOpO/giphy.gif" width="420" height="236">
+                                                      <button class="copy-button" onclick="copyMarkdown(this, 'this-is-a-high-five-moment', 'https://media.giphy.com/media/w5S93jM3bA3rbPTOpO/giphy.gif')">
+                                                        Copy MD
+                                                      </button>
+                                                    </div>
+                                                    <br>
+                                                      <b>
+                                                        Name
+                                                      </b>
+                                                      : unwilling-cat-low-five-shipit
+                                                      <br>
+                                                      <div class="gif-container">
+                                                        <img loading="lazy" alt="unwilling-cat-low-five-shipit" src="https://media.giphy.com/media/TLKp7l4rdWFMVfN5hP/giphy.gif" width="420" height="253">
+                                                        <button class="copy-button" onclick="copyMarkdown(this, 'unwilling-cat-low-five-shipit', 'https://media.giphy.com/media/TLKp7l4rdWFMVfN5hP/giphy.gif')">
+                                                          Copy MD
+                                                        </button>
+                                                      </div>
+                                                      <br>
+                                                        <b>
+                                                          Name
+                                                        </b>
+                                                        : cat-standing-thankyou
+                                                        <br>
+                                                        <div class="gif-container">
+                                                          <img loading="lazy" alt="cat-standing-thankyou" src="https://media.giphy.com/media/BPDa8OZh7gQPrhgDtd/giphy.gif" width="420" height="746">
+                                                          <button class="copy-button" onclick="copyMarkdown(this, 'cat-standing-thankyou', 'https://media.giphy.com/media/BPDa8OZh7gQPrhgDtd/giphy.gif')">
+                                                            Copy MD
+                                                          </button>
+                                                        </div>
+                                                        <br>
+                                                          <b>
+                                                            Name
+                                                          </b>
+                                                          : multiple-pikachu-shipit
+                                                          <br>
+                                                          <div class="gif-container">
+                                                            <img loading="lazy" alt="multiple-pikachu-shipit" src="https://i.fluffy.cc/BPgxZkmsrgmfcDFDCNWC3m4CW0gCJF7w.gif" width="420" height="236">
+                                                            <button class="copy-button" onclick="copyMarkdown(this, 'multiple-pikachu-shipit', 'https://i.fluffy.cc/BPgxZkmsrgmfcDFDCNWC3m4CW0gCJF7w.gif')">
+                                                              Copy MD
+                                                            </button>
+                                                          </div>
+                                                          <br>
+                                                            <b>
+                                                              Name
+                                                            </b>
+                                                            : sitting-cat-high-five
+                                                            <br>
+                                                            <div class="gif-container">
+                                                              <img loading="lazy" alt="sitting-cat-high-five" src="https://i.fluffy.cc/TNRR0PklwSCMZlZHQkvpQPNl8h50SpgP.gif" width="420" height="236">
+                                                              <button class="copy-button" onclick="copyMarkdown(this, 'sitting-cat-high-five', 'https://i.fluffy.cc/TNRR0PklwSCMZlZHQkvpQPNl8h50SpgP.gif')">
+                                                                Copy MD
+                                                              </button>
+                                                            </div>
+                                                            <br>
+                                                              <b>
+                                                                Name
+                                                              </b>
+                                                              : husky-jumping-shipit
+                                                              <br>
+                                                              <div class="gif-container">
+                                                                <img loading="lazy" alt="husky-jumping-shipit" src="https://i.fluffy.cc/b6wlBbdVkX83CHpLWxHZw74WJxHVQc9S.gif" width="420" height="445">
+                                                                <button class="copy-button" onclick="copyMarkdown(this, 'husky-jumping-shipit', 'https://i.fluffy.cc/b6wlBbdVkX83CHpLWxHZw74WJxHVQc9S.gif')">
+                                                                  Copy MD
+                                                                </button>
+                                                              </div>
+                                                              <br>
+                                                                <b>
+                                                                  Name
+                                                                </b>
+                                                                : carrying-dog-shipit-plz
+                                                                <br>
+                                                                <div class="gif-container">
+                                                                  <img loading="lazy" alt="carrying-dog-shipit-plz" src="https://i.fluffy.cc/7WXqprWzDtCpbfprBZG1Hngnp7H7pfQm.gif" width="420" height="232">
+                                                                  <button class="copy-button" onclick="copyMarkdown(this, 'carrying-dog-shipit-plz', 'https://i.fluffy.cc/7WXqprWzDtCpbfprBZG1Hngnp7H7pfQm.gif')">
+                                                                    Copy MD
+                                                                  </button>
+                                                                </div>
+                                                                <br>
+                                                                  <b>
+                                                                    Name
+                                                                  </b>
+                                                                  : kitten-low-five-shipit
+                                                                  <br>
+                                                                  <div class="gif-container">
+                                                                    <img loading="lazy" alt="kitten-low-five-shipit" src="https://i.fluffy.cc/3X84Bq2RR182XcPr0NTKKCp7wvNT8MhD.gif" width="420" height="226">
+                                                                    <button class="copy-button" onclick="copyMarkdown(this, 'kitten-low-five-shipit', 'https://i.fluffy.cc/3X84Bq2RR182XcPr0NTKKCp7wvNT8MhD.gif')">
+                                                                      Copy MD
+                                                                    </button>
+                                                                  </div>
+                                                                  <br>
+                                                                    <b>
+                                                                      Name
+                                                                    </b>
+                                                                    : believe-flying-puppy-shipit
+                                                                    <br>
+                                                                    <div class="gif-container">
+                                                                      <img loading="lazy" alt="believe-flying-puppy-shipit" src="https://media.giphy.com/media/37YkA62o0EacPqD0xm/giphy.gif" width="420" height="396">
+                                                                      <button class="copy-button" onclick="copyMarkdown(this, 'believe-flying-puppy-shipit', 'https://media.giphy.com/media/37YkA62o0EacPqD0xm/giphy.gif')">
+                                                                        Copy MD
+                                                                      </button>
+                                                                    </div>
+                                                                    <br>
+                                                                      <b>
+                                                                        Name
+                                                                      </b>
+                                                                      : clockwork-thumbsup
+                                                                      <br>
+                                                                      <div class="gif-container">
+                                                                        <img loading="lazy" alt="clockwork-thumbsup" src="https://media.giphy.com/media/8xSnw21AM7OQo/giphy-downsized.gif" width="420" height="362">
+                                                                        <button class="copy-button" onclick="copyMarkdown(this, 'clockwork-thumbsup', 'https://media.giphy.com/media/8xSnw21AM7OQo/giphy-downsized.gif')">
+                                                                          Copy MD
+                                                                        </button>
+                                                                      </div>
+                                                                      <br>
+                                                                        <b>
+                                                                          Name
+                                                                        </b>
+                                                                        : fake-paws-dog-clapping
+                                                                        <br>
+                                                                        <div class="gif-container">
+                                                                          <img loading="lazy" alt="fake-paws-dog-clapping" src="https://media.giphy.com/media/cnEXsCkEEhPWKoIgEL/giphy.gif" width="420" height="236">
+                                                                          <button class="copy-button" onclick="copyMarkdown(this, 'fake-paws-dog-clapping', 'https://media.giphy.com/media/cnEXsCkEEhPWKoIgEL/giphy.gif')">
+                                                                            Copy MD
+                                                                          </button>
+                                                                        </div>
+                                                                        <br>
+                                                                          <b>
+                                                                            Name
+                                                                          </b>
+                                                                          : tom-hanks-laptop-lgtm
+                                                                          <br>
+                                                                          <div class="gif-container">
+                                                                            <img loading="lazy" alt="tom-hanks-laptop-lgtm" src="https://media.giphy.com/media/W7K4C2BnqqafLhHwpX/giphy.gif" width="420" height="239">
+                                                                            <button class="copy-button" onclick="copyMarkdown(this, 'tom-hanks-laptop-lgtm', 'https://media.giphy.com/media/W7K4C2BnqqafLhHwpX/giphy.gif')">
+                                                                              Copy MD
+                                                                            </button>
+                                                                          </div>
+                                                                          <br>
+                                                                            <b>
+                                                                              Name
+                                                                            </b>
+                                                                            : fluffy-dog-air-swimming
+                                                                            <br>
+                                                                            <div class="gif-container">
+                                                                              <img loading="lazy" alt="fluffy-dog-air-swimming" src="https://media.giphy.com/media/g8IptQ1lfPL2GN0G8G/giphy.gif" width="420" height="430">
+                                                                              <button class="copy-button" onclick="copyMarkdown(this, 'fluffy-dog-air-swimming', 'https://media.giphy.com/media/g8IptQ1lfPL2GN0G8G/giphy.gif')">
+                                                                                Copy MD
+                                                                              </button>
+                                                                            </div>
+                                                                            <br>
+                                                                              <b>
+                                                                                Name
+                                                                              </b>
+                                                                              : dog-teaches-baby-crawling
+                                                                              <br>
+                                                                              <div class="gif-container">
+                                                                                <img loading="lazy" alt="dog-teaches-baby-crawling" src="https://media.giphy.com/media/pf09ZGSaOF7j7HsuSR/giphy.gif" width="420" height="224">
+                                                                                <button class="copy-button" onclick="copyMarkdown(this, 'dog-teaches-baby-crawling', 'https://media.giphy.com/media/pf09ZGSaOF7j7HsuSR/giphy.gif')">
+                                                                                  Copy MD
+                                                                                </button>
+                                                                              </div>
+                                                                              <br>
+                                                                                <b>
+                                                                                  Name
+                                                                                </b>
+                                                                                : trump-debate-self-high-five
+                                                                                <br>
+                                                                                <div class="gif-container">
+                                                                                  <img loading="lazy" alt="trump-debate-self-high-five" src="https://media.giphy.com/media/r60QQE4Y4RvwXqUjpC/giphy.gif" width="420" height="235">
+                                                                                  <button class="copy-button" onclick="copyMarkdown(this, 'trump-debate-self-high-five', 'https://media.giphy.com/media/r60QQE4Y4RvwXqUjpC/giphy.gif')">
+                                                                                    Copy MD
+                                                                                  </button>
+                                                                                </div>
+                                                                                <br>
+                                                                                  <b>
+                                                                                    Name
+                                                                                  </b>
+                                                                                  : recursive-thumbsup-in-video-recording
+                                                                                  <br>
+                                                                                  <div class="gif-container">
+                                                                                    <img loading="lazy" alt="recursive-thumbsup-in-video-recording" src="https://media.giphy.com/media/kuDlY5VOWVTBkEpWoC/giphy.gif" width="420" height="236">
+                                                                                    <button class="copy-button" onclick="copyMarkdown(this, 'recursive-thumbsup-in-video-recording', 'https://media.giphy.com/media/kuDlY5VOWVTBkEpWoC/giphy.gif')">
+                                                                                      Copy MD
+                                                                                    </button>
+                                                                                  </div>
+                                                                                  <br>
+                                                                                    <b>
+                                                                                      Name
+                                                                                    </b>
+                                                                                    : husky-head-through-door-flap-thankyou
+                                                                                    <br>
+                                                                                    <div class="gif-container">
+                                                                                      <img loading="lazy" alt="husky-head-through-door-flap-thankyou" src="https://c.tenor.com/FK16Bus5_S0AAAAd/husky-huskies.gif" width="420" height="420">
+                                                                                      <button class="copy-button" onclick="copyMarkdown(this, 'husky-head-through-door-flap-thankyou', 'https://c.tenor.com/FK16Bus5_S0AAAAd/husky-huskies.gif')">
+                                                                                        Copy MD
+                                                                                      </button>
+                                                                                    </div>
+                                                                                    <br>
+                                                                                      <b>
+                                                                                        Name
+                                                                                      </b>
+                                                                                      : singapore-nsp-thumbsup-man
+                                                                                      <br>
+                                                                                      <div class="gif-container">
+                                                                                        <img loading="lazy" alt="singapore-nsp-thumbsup-man" src="https://media.giphy.com/media/e5z13ZQwKmj9X6ILcQ/giphy.gif" width="420" height="299">
+                                                                                        <button class="copy-button" onclick="copyMarkdown(this, 'singapore-nsp-thumbsup-man', 'https://media.giphy.com/media/e5z13ZQwKmj9X6ILcQ/giphy.gif')">
+                                                                                          Copy MD
+                                                                                        </button>
+                                                                                      </div>
+                                                                                      <br>
+                                                                                        <b>
+                                                                                          Name
+                                                                                        </b>
+                                                                                        : sled-dog-puppy-air-swimming
+                                                                                        <br>
+                                                                                        <div class="gif-container">
+                                                                                          <img loading="lazy" alt="sled-dog-puppy-air-swimming" src="https://media.giphy.com/media/pve4hvIwhDyYp9f8XU/giphy.gif" width="420" height="235">
+                                                                                          <button class="copy-button" onclick="copyMarkdown(this, 'sled-dog-puppy-air-swimming', 'https://media.giphy.com/media/pve4hvIwhDyYp9f8XU/giphy.gif')">
+                                                                                            Copy MD
+                                                                                          </button>
+                                                                                        </div>
+                                                                                        <br>
+                                                                                          <b>
+                                                                                            Name
+                                                                                          </b>
+                                                                                          : baby-biscuit-expression-change
+                                                                                          <br>
+                                                                                          <div class="gif-container">
+                                                                                            <img loading="lazy" alt="baby-biscuit-expression-change" src="https://media.giphy.com/media/Acx1QcsVJ7XrgD99JR/giphy.gif" width="420" height="315">
+                                                                                            <button class="copy-button" onclick="copyMarkdown(this, 'baby-biscuit-expression-change', 'https://media.giphy.com/media/Acx1QcsVJ7XrgD99JR/giphy.gif')">
+                                                                                              Copy MD
+                                                                                            </button>
+                                                                                          </div>
+                                                                                          <br>
+                                                                                            <b>
+                                                                                              Name
+                                                                                            </b>
+                                                                                            : law-and-order-mirror-thumbsup
+                                                                                            <br>
+                                                                                            <div class="gif-container">
+                                                                                              <img loading="lazy" alt="law-and-order-mirror-thumbsup" src="https://media.giphy.com/media/ugJjRLAQlHi09KZ6tu/giphy.gif" width="420" height="236">
+                                                                                              <button class="copy-button" onclick="copyMarkdown(this, 'law-and-order-mirror-thumbsup', 'https://media.giphy.com/media/ugJjRLAQlHi09KZ6tu/giphy.gif')">
+                                                                                                Copy MD
+                                                                                              </button>
+                                                                                            </div>
+                                                                                            <br>
+                                                                                              <b>
+                                                                                                Name
+                                                                                              </b>
+                                                                                              : head-swing-iloveit-thumbsup
+                                                                                              <br>
+                                                                                              <div class="gif-container">
+                                                                                                <img loading="lazy" alt="head-swing-iloveit-thumbsup" src="https://media.giphy.com/media/2GaZZLgA9lxra/giphy.gif" width="420" height="196">
+                                                                                                <button class="copy-button" onclick="copyMarkdown(this, 'head-swing-iloveit-thumbsup', 'https://media.giphy.com/media/2GaZZLgA9lxra/giphy.gif')">
+                                                                                                  Copy MD
+                                                                                                </button>
+                                                                                              </div>
+                                                                                              <br>
+                                                                                                <b>
+                                                                                                  Name
+                                                                                                </b>
+                                                                                                : dog-hopping-low-five
+                                                                                                <br>
+                                                                                                <div class="gif-container">
+                                                                                                  <img loading="lazy" alt="dog-hopping-low-five" src="https://media.giphy.com/media/u8tbFJtOE7eQlq1Eii/giphy.gif" width="420" height="365">
+                                                                                                  <button class="copy-button" onclick="copyMarkdown(this, 'dog-hopping-low-five', 'https://media.giphy.com/media/u8tbFJtOE7eQlq1Eii/giphy.gif')">
+                                                                                                    Copy MD
+                                                                                                  </button>
+                                                                                                </div>
+                                                                                                <br>
+                                                                                                  <b>
+                                                                                                    Name
+                                                                                                  </b>
+                                                                                                  : otter-slamdunk-shipit
+                                                                                                  <br>
+                                                                                                  <div class="gif-container">
+                                                                                                    <img loading="lazy" alt="otter-slamdunk-shipit" src="https://media.giphy.com/media/hyKSrbOAMDtX1YeBxn/giphy.gif" width="420" height="411">
+                                                                                                    <button class="copy-button" onclick="copyMarkdown(this, 'otter-slamdunk-shipit', 'https://media.giphy.com/media/hyKSrbOAMDtX1YeBxn/giphy.gif')">
+                                                                                                      Copy MD
+                                                                                                    </button>
+                                                                                                  </div>
+                                                                                                  <br>
+                                                                                                    <b>
+                                                                                                      Name
+                                                                                                    </b>
+                                                                                                    : parrot-heart-thankyou
+                                                                                                    <br>
+                                                                                                    <div class="gif-container">
+                                                                                                      <img loading="lazy" alt="parrot-heart-thankyou" src="https://media.giphy.com/media/xPZw7k1pII527I4atR/giphy.gif" width="420" height="402">
+                                                                                                      <button class="copy-button" onclick="copyMarkdown(this, 'parrot-heart-thankyou', 'https://media.giphy.com/media/xPZw7k1pII527I4atR/giphy.gif')">
+                                                                                                        Copy MD
+                                                                                                      </button>
+                                                                                                    </div>
+                                                                                                    <br>
+                                                                                                      <b>
+                                                                                                        Name
+                                                                                                      </b>
+                                                                                                      : corgi-excited-tippytaps
+                                                                                                      <br>
+                                                                                                      <div class="gif-container">
+                                                                                                        <img loading="lazy" alt="corgi-excited-tippytaps" src="https://media.giphy.com/media/9af1hFJUjIXqnG0QzN/giphy.gif" width="420" height="420">
+                                                                                                        <button class="copy-button" onclick="copyMarkdown(this, 'corgi-excited-tippytaps', 'https://media.giphy.com/media/9af1hFJUjIXqnG0QzN/giphy.gif')">
+                                                                                                          Copy MD
+                                                                                                        </button>
+                                                                                                      </div>
+                                                                                                      <br>
+                                                                                                        <b>
+                                                                                                          Name
+                                                                                                        </b>
+                                                                                                        : zuckerberg-nice-job-team
+                                                                                                        <br>
+                                                                                                        <div class="gif-container">
+                                                                                                          <img loading="lazy" alt="zuckerberg-nice-job-team" src="https://media.giphy.com/media/JO7BToe2BmwVgWZ8gs/giphy.gif" width="420" height="746">
+                                                                                                          <button class="copy-button" onclick="copyMarkdown(this, 'zuckerberg-nice-job-team', 'https://media.giphy.com/media/JO7BToe2BmwVgWZ8gs/giphy.gif')">
+                                                                                                            Copy MD
+                                                                                                          </button>
+                                                                                                        </div>
+                                                                                                        <br>
+                                                                                                          <b>
+                                                                                                            Name
+                                                                                                          </b>
+                                                                                                          : toddler-skiing-high-five
+                                                                                                          <br>
+                                                                                                          <div class="gif-container">
+                                                                                                            <img loading="lazy" alt="toddler-skiing-high-five" src="https://media.giphy.com/media/XA6AE9aVLfHS7lhGTM/giphy.gif" width="420" height="280">
+                                                                                                            <button class="copy-button" onclick="copyMarkdown(this, 'toddler-skiing-high-five', 'https://media.giphy.com/media/XA6AE9aVLfHS7lhGTM/giphy.gif')">
+                                                                                                              Copy MD
+                                                                                                            </button>
+                                                                                                          </div>
+                                                                                                          <br>
+                                                                                                            <b>
+                                                                                                              Name
+                                                                                                            </b>
+                                                                                                            : twin-peaks-thumbs-up-duo
+                                                                                                            <br>
+                                                                                                            <div class="gif-container">
+                                                                                                              <img loading="lazy" alt="twin-peaks-thumbs-up-duo" src="https://media.giphy.com/media/An95xQZRS1B1S/giphy.gif" width="420" height="294">
+                                                                                                              <button class="copy-button" onclick="copyMarkdown(this, 'twin-peaks-thumbs-up-duo', 'https://media.giphy.com/media/An95xQZRS1B1S/giphy.gif')">
+                                                                                                                Copy MD
+                                                                                                              </button>
+                                                                                                            </div>
+                                                                                                            <br>
+                                                                                                              <b>
+                                                                                                                Name
+                                                                                                              </b>
+                                                                                                              : cat-high-five-fall
+                                                                                                              <br>
+                                                                                                              <div class="gif-container">
+                                                                                                                <img loading="lazy" alt="cat-high-five-fall" src="https://media.giphy.com/media/wXF43QagSNJ6rw9WvC/giphy.gif" width="420" height="484">
+                                                                                                                <button class="copy-button" onclick="copyMarkdown(this, 'cat-high-five-fall', 'https://media.giphy.com/media/wXF43QagSNJ6rw9WvC/giphy.gif')">
+                                                                                                                  Copy MD
+                                                                                                                </button>
+                                                                                                              </div>
+                                                                                                              <br>
+                                                                                                            </br>
+                                                                                                          </br>
+                                                                                                        </br>
+                                                                                                      </br>
+                                                                                                    </br>
+                                                                                                  </br>
+                                                                                                </br>
+                                                                                              </br>
+                                                                                            </br>
+                                                                                          </br>
+                                                                                        </br>
+                                                                                      </br>
+                                                                                    </br>
+                                                                                  </br>
+                                                                                </br>
+                                                                              </br>
+                                                                            </br>
+                                                                          </br>
+                                                                        </br>
+                                                                      </br>
+                                                                    </br>
+                                                                  </br>
+                                                                </br>
+                                                              </br>
+                                                            </br>
+                                                          </br>
+                                                        </br>
+                                                      </br>
+                                                    </br>
+                                                  </br>
+                                                </br>
+                                              </br>
+                                            </br>
+                                          </br>
+                                        </br>
+                                      </br>
+                                    </br>
+                                  </br>
+                                </br>
+                              </br>
+                            </br>
+                          </br>
+                        </br>
+                      </br>
+                    </br>
+                  </br>
+                </br>
+              </br>
+            </br>
+          </br>
+        </br>
+      </br>
+    </br>
   </body>
+  <script>
+    function copyMarkdown(button, name, url) {
+      // Create the markdown string
+      const markdown = `![${name}](${url})`;
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(markdown).then(() => {
+        // Show feedback
+        button.textContent = 'Copied!';
+        button.classList.add('copied');
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+          button.textContent = 'Copy MD';
+          button.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        button.textContent = 'Error!';
+        setTimeout(() => {
+          button.textContent = 'Copy MD';
+        }, 2000);
+      });
+    }
+  </script>
 </html>

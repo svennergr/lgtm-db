@@ -1,4 +1,5 @@
 from pathlib import Path
+import html
 
 import yaml
 from bs4 import BeautifulSoup
@@ -42,13 +43,25 @@ def render_section(resources: list, section_title: str) -> str:
     #   case.
     for idx, rsrc in enumerate(resources):
         name = rsrc["name"]
+        url = rsrc["url"]
         img_tag = gif_to_string_output(
             rsrc,
             output_format=StringOutputFormat.HTML,
             desired_width=420,
             lazy=idx >= 0,
         )
-        section_contents.append(rf"<b>Name</b>: {name}<br>{img_tag}")
+        
+        # Escape name and URL for JavaScript
+        escaped_name = html.escape(name, quote=True).replace("'", "\\'")
+        escaped_url = html.escape(url, quote=True).replace("'", "\\'")
+        
+        # Wrap the GIF in a container with the copy button
+        gif_html = f'''<div class="gif-container">
+            {img_tag}
+            <button class="copy-button" onclick="copyMarkdown(this, '{escaped_name}', '{escaped_url}')">Copy MD</button>
+        </div><br/>'''
+        
+        section_contents.append(rf"<b>Name</b>: {name}<br>{gif_html}")
 
     body += "\n\n".join(section_contents)
     return body
